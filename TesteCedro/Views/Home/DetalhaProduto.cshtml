@@ -1,0 +1,31 @@
+﻿@model TesteCedro.Models.Produto
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Detalhar Produto</title>
+    <link rel="stylesheet" type="text/css" href="~/css/site.min.css">
+</head>
+<body>
+    <div>
+        <h1>Detalhar Produtos</h1>
+        <hr />
+        <div class="cardProduto">
+            <img class="img-thumbnail" src=@Html.DisplayFor(modelproduto => modelproduto.Imagem)
+                 alt="Avatar" style=" width:400px; height:250px; display:block; margin:auto;">
+            <h4 style="margin:2px"> <b>Nome: </b> @Html.DisplayFor(modelproduto => modelproduto.Nome)</h4>
+            <p style="margin:2px"> <b>Descrição: </b> @Html.DisplayFor(modelproduto => modelproduto.Descricao)</p>
+            <p style="margin:2px"> <b>Valor: </b> R$ @Html.DisplayFor(modelproduto => modelproduto.Valor)</p>
+            <div class="buttonProduto">
+                <form asp-action="DetalharProduto">
+                    <div class="form-group">
+                        <input asp-for="IDProduto" type="hidden" class="form-control" />
+                        <span asp-validation-for="IDProduto" class="text-danger"></span>
+                    </div>
+                    <a asp-action="Index" class="btn btn-default" style="margin:3px; background-color:aliceblue; color:darkblue "><b> Voltar </b></a>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

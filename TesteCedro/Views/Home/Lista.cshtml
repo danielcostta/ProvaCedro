@@ -1,0 +1,30 @@
+﻿@model IEnumerable<TesteCedro.Models.Produto>
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width" />
+    <title>Produtos Cadastrados</title>
+    <link rel="stylesheet" type="text/css" href="~/css/site.min.css">
+</head>
+<body>
+    <h1>Produtos Cadastrados</h1>
+    <hr />
+    <br />
+    @foreach (var produto in Model)
+    {
+        <div class="cardProduto">
+            <img class="img-thumbnail" src=@Html.DisplayFor(modelproduto => produto.Imagem)
+                 alt="Avatar" style=" width:400px; height:250px; display:block; margin:auto;">
+            <h4 style="margin:2px"> <b>Nome:</b> @Html.DisplayFor(modelproduto => produto.Nome)</h4>
+            <p style="margin:2px"> <b>Valor:</b> R$ @Html.DisplayFor(modelproduto => produto.Valor)</p>
+            <div class="buttonProduto">
+                <button class="btn btn-default" style="background-color:aliceblue; color:darkblue; margin:3px"><b>@Html.ActionLink("Editar", "EditaProduto", new { id = produto.IDProduto })</b> </button>
+                <button class="btn btn-default" style="background-color:aliceblue; color:darkblue; margin:3px"><b>@Html.ActionLink("Detalhar", "DetalhaProduto", new { id = produto.IDProduto })</b> </button>
+                <button class="btn btn-default" style="background-color:aliceblue; color:darkblue; margin:3px"><b>@Html.ActionLink("Excluir", "ExcluiProduto", new { id = produto.IDProduto })</b> </button>
+                <button class="btn btn-default" style="background-color:aliceblue; color:darkblue; margin:3px"><b>@Html.ActionLink("Comprar", "CompraProduto", new { id = produto.IDProduto })</b> </button>
+            </div>
+        </div>
+    }
+</body>
+</html>
