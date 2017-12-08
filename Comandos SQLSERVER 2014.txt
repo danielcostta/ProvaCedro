@@ -1,0 +1,41 @@
+CREATE DATABASE TesteCedro
+
+Use TesteCedro
+
+CREATE TABLE Produto(
+	IDProduto INTEGER NOT NULL PRIMARY KEY IDENTITY(1,1),
+	Nome VARCHAR(100) NOT NULL,
+	Descricao VARCHAR(200) NOT NULL,
+	Valor FLOAT NOT NULL,
+	Imagem VARCHAR(250) NOT NULL
+)
+
+CREATE PROCEDURE InsereProduto(@Nome VARCHAR(100), @Descricao VARCHAR(200), @Valor FLOAT, @Imagem varchar(250)) AS
+BEGIN
+	INSERT INTO Produto(Nome, Descricao, Valor, Imagem) VALUES(@Nome, @Descricao, @Valor, @Imagem)
+END
+
+CREATE PROCEDURE EditaProduto (@IDProduto INTEGER, @Nome VARCHAR(100), @Descricao VARCHAR(200), @Valor FLOAT, @Imagem VARCHAR(250)) AS
+BEGIN
+	UPDATE Produto
+	SET Nome = @Nome,
+	Descricao = @Descricao,
+	Valor = @Valor,
+	Imagem = @Imagem
+	WHERE IDProduto = @IDProduto
+END
+
+CREATE PROCEDURE ExcluiProduto(@IDProduto INTEGER) AS
+BEGIN
+	DELETE FROM Produto WHERE IDProduto = @IDProduto
+END
+
+CREATE PROCEDURE SelecionaTodosProdutos AS
+BEGIN
+	SELECT * FROM Produto
+END
+
+CREATE PROCEDURE SelecionaProdutoEspecifico(@IDProduto INTEGER) AS
+BEGIN
+	SELECT * FROM Produto WHERE IDProduto = @IDProduto
+END
