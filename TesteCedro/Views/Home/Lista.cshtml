@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="~/css/site.min.css">
 </head>
 <body>
-    <h1>Produtos Cadastrados</h1>
+    <h2><b>PRODUTOS CADASTRADOS</b></h2>
     <hr />
     <br />
     @foreach (var produto in Model)
@@ -16,13 +16,13 @@
         <div class="cardProduto">
             <img class="img-thumbnail" src=@Html.DisplayFor(modelproduto => produto.Imagem)
                  alt="Avatar" style=" width:400px; height:250px; display:block; margin:auto;">
-            <h4 style="margin:2px"> <b>Nome:</b> @Html.DisplayFor(modelproduto => produto.Nome)</h4>
-            <p style="margin:2px"> <b>Valor:</b> R$ @Html.DisplayFor(modelproduto => produto.Valor)</p>
+            <h4 style="margin:5px"> <b>NOME:</b> @Html.DisplayFor(modelproduto => produto.Nome)</h4>
+            <h4 style="margin:5px"> <b>PREÇO:</b> R$ @Html.DisplayFor(modelproduto => produto.Valor)</h4>
             <div class="buttonProduto">
-                <button class="btn btn-default" style="background-color:aliceblue; color:darkblue; margin:3px"><b>@Html.ActionLink("Editar", "EditaProduto", new { id = produto.IDProduto })</b> </button>
-                <button class="btn btn-default" style="background-color:aliceblue; color:darkblue; margin:3px"><b>@Html.ActionLink("Detalhar", "DetalhaProduto", new { id = produto.IDProduto })</b> </button>
-                <button class="btn btn-default" style="background-color:aliceblue; color:darkblue; margin:3px"><b>@Html.ActionLink("Excluir", "ExcluiProduto", new { id = produto.IDProduto })</b> </button>
-                <button class="btn btn-default" style="background-color:aliceblue; color:darkblue; margin:3px"><b>@Html.ActionLink("Comprar", "CompraProduto", new { id = produto.IDProduto })</b> </button>
+                <button class="btn btn-default" style="background-color:#000000; color:#ffffff; margin:5px"><b>@Html.ActionLink("COMPRAR", "CompraProduto", new { id = produto.IDProduto })</b> </button>
+                <button class="btn btn-default" style="background-color:#000000; color:#ffffff; margin:5px"><b>@Html.ActionLink("DETALHAR", "DetalhaProduto", new { id = produto.IDProduto })</b> </button>
+                <button class="btn btn-default" style="background-color:#000000; color:#ffffff; margin:5px"><b>@Html.ActionLink("EDITAR", "EditaProduto", new { id = produto.IDProduto })</b> </button>
+                <button class="btn btn-default" style="background-color:#000000; color:#ffffff; margin:5px"><b>@Html.ActionLink("EXCLUIR", "ExcluiProduto", new { id = produto.IDProduto })</b> </button>
             </div>
         </div>
     }

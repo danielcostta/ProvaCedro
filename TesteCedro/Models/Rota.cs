@@ -4,8 +4,6 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 using TesteCedro.Services;
 
 namespace TesteCedro.Models
@@ -223,5 +221,5 @@ namespace TesteCedro.Models
                 }
         }
     }
-
 }
+

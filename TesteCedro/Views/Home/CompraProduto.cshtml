@@ -9,20 +9,20 @@
 </head>
 <body>
     <div>
-        <h1>Comprar Produto</h1>
+        <h2><b>COMPRAR PRODUTO</b></h2>
         <hr />
         <div class="cardProduto" style="width:50%">
             <form method="POST">
                 <img class="img-thumbnail" src=@Html.DisplayFor(modelproduto => modelproduto.Imagem)
                      alt="Avatar" style=" width:400px; height:250px; display:block; margin:auto;">
-                <h4 style="margin:2px"> <b>Nome:</b> @Html.DisplayFor(modelproduto => modelproduto.Nome)</h4>
-                <p style="margin:2px"> <b>Valor:</b> R$ @Html.DisplayFor(modelproduto => modelproduto.Valor)</p>
+                <h4 style="margin:5px"> <b>NOME:</b> @Html.DisplayFor(modelproduto => modelproduto.Nome)</h4>
+                <h4 style="margin:5px"> <b>PREÇO:</b> R$ @Html.DisplayFor(modelproduto => modelproduto.Valor)</h4>
                 <input type="hidden" id="valorProduto" value="@Html.DisplayFor(model => model.Valor)" disabled>
-                <div class="buttonProduto">
-                    <input type="button" class="btn btn-default" onclick="avistacomdesconto(valorProduto)" value="Boleto a vista" style="background-color:aliceblue; color:darkblue" />
-                    <input type="button" class="btn btn-default" onclick="avista(valorProduto)" value="Cartão a vista" style="background-color:aliceblue; color:darkblue">
-                    <input type="button" class="btn btn-default" onclick="aprazo(valorProduto)" value="Cartão parcelado" style="background-color:aliceblue; color:darkblue">
-                    <a asp-action="Index" class="btn btn-default" style="margin:3px; background-color:aliceblue; color:darkblue "><b> Voltar </b></a>
+                <div>
+                    <input type="button" class="btn btn-default" onclick="avistacomdesconto(valorProduto)" value="BOLETO" style="background-color:#000000; color:#ffffff" />
+                    <input type="button" class="btn btn-default" onclick="avista(valorProduto)" value="CARTÃO A VISTA" style="background-color:#000000; color:#ffffff">
+                    <input type="button" class="btn btn-default" onclick="aprazo(valorProduto)" value="CARTÃO PARCELADO" style="background-color:#000000; color:#ffffff">
+                    <a asp-action="Index" class="btn btn-default" style="margin:3px; background-color:#000000; color:#ffffff "> VOLTAR </a>
                 </div>
                 <div id="inputParcelas">
                 </div>
